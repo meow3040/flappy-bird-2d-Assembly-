@@ -1,0 +1,85 @@
+================================================================================
+2D GAME ENGINE - QUICK START GUIDE
+================================================================================
+
+PREREQUISITES:
+--------------
+1. NASM (Netwide Assembler) - https://www.nasm.us/
+2. GCC (MinGW-w64) - https://www.mingw-w64.org/
+3. Windows 64-bit
+
+VERIFY INSTALLATION:
+--------------------
+Open Command Prompt and type:
+    nasm -v
+    gcc --version
+
+If both commands work, you're ready to build!
+
+BUILD & RUN:
+------------
+Option 1 (Easy): Double-click "build.bat"
+
+Option 2 (Command Line):
+    1. Open Command Prompt in this folder
+    2. Run: build.bat
+    3. Run: game.exe
+
+Option 3 (Manual):
+    nasm -f win64 game.asm -o game.obj
+    gcc game.obj -o game.exe -luser32 -lgdi32 -lkernel32 -mwindows
+    game.exe
+
+GAME CONTROLS:
+--------------
+Arrow Keys = Move the green player square
+ESC        = Exit game
+
+GOAL:
+-----
+Avoid the red enemy squares!
+They bounce around the screen.
+If you touch one, you respawn in the center.
+
+PROJECT FILES:
+--------------
+game.asm         - Complete game engine source code (630+ lines)
+build.bat        - Automated build script
+README.md        - Full documentation
+QUICK_START.txt  - This file
+
+CUSTOMIZATION:
+--------------
+Edit game.asm and change these constants:
+
+    WINDOW_WIDTH equ 800      ; Change window size
+    WINDOW_HEIGHT equ 600
+    PLAYER_SPEED equ 5        ; Change player speed
+    ENEMY_SPEED equ 2         ; Change enemy speed
+    MAX_ENEMIES equ 5         ; Change number of enemies
+
+Then rebuild with build.bat
+
+TROUBLESHOOTING:
+----------------
+Problem: "nasm: command not found"
+Solution: Install NASM and add to PATH
+
+Problem: "gcc: command not found"
+Solution: Install MinGW-w64 and add to PATH
+
+Problem: Window doesn't appear
+Solution: Run from command prompt to see errors
+
+ENJOY!
+------
+You now have a working 2D game engine in pure Assembly!
+
+Explore the code to learn about:
+- Windows API programming
+- Game loops and timing
+- Collision detection
+- Input handling
+- 2D rendering
+
+================================================================================
